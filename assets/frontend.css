@@ -1,0 +1,516 @@
+/* JGrants Integration Frontend Styles */
+
+/* 基本スタイル */
+.jgrants-list {
+    margin: 20px 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.jgrants-items {
+    display: grid;
+    gap: 20px;
+}
+
+/* 助成金アイテム */
+.jgrants-item {
+    background: #ffffff;
+    border: 1px solid #e1e5e9;
+    border-radius: 8px;
+    padding: 24px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.jgrants-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: var(--jgrants-accent-color, #007cba);
+    transform: scaleY(0);
+    transition: transform 0.3s ease;
+}
+
+.jgrants-item:hover {
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+}
+
+.jgrants-item:hover::before {
+    transform: scaleY(1);
+}
+
+/* ヘッダー */
+.jgrants-header {
+    margin-bottom: 16px;
+}
+
+.jgrants-title {
+    margin: 0 0 12px 0;
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 1.4;
+    color: #1a1a1a;
+}
+
+.jgrants-title a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.2s ease;
+}
+
+.jgrants-title a:hover {
+    color: var(--jgrants-accent-color, #007cba);
+}
+
+/* メタ情報 */
+.jgrants-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.jgrants-status-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: white;
+    background: var(--jgrants-status-badge-color, #28a745);
+}
+
+.jgrants-status-badge.status-open {
+    background: #28a745;
+}
+
+.jgrants-status-badge.status-upcoming {
+    background: #17a2b8;
+}
+
+.jgrants-status-badge.status-closed {
+    background: #6c757d;
+}
+
+.jgrants-status-badge.status-unknown {
+    background: #ffc107;
+    color: #212529;
+}
+
+.jgrants-organization,
+.jgrants-amount,
+.jgrants-rate {
+    display: inline-block;
+    padding: 3px 8px;
+    background: #f8f9fa;
+    border: 1px solid #e9ecef;
+    border-radius: 4px;
+    font-size: 12px;
+    color: #495057;
+    font-weight: 500;
+}
+
+.jgrants-amount {
+    background: #e8f5e8;
+    border-color: #c3e6c3;
+    color: #155724;
+}
+
+/* コンテンツ */
+.jgrants-content {
+    margin-bottom: 20px;
+}
+
+.jgrants-excerpt {
+    margin-bottom: 12px;
+    line-height: 1.6;
+    color: #4a5568;
+    font-size: 15px;
+}
+
+.jgrants-dates {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+    padding: 8px 12px;
+    background: #f7fafc;
+    border-left: 3px solid var(--jgrants-accent-color, #007cba);
+    border-radius: 0 4px 4px 0;
+    font-size: 14px;
+}
+
+.jgrants-dates-label {
+    font-weight: 600;
+    margin-right: 8px;
+    color: #2d3748;
+}
+
+.jgrants-dates time {
+    color: #4a5568;
+}
+
+/* タクソノミー */
+.jgrants-taxonomies {
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px solid #e2e8f0;
+}
+
+.jgrants-taxonomies > div {
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.taxonomy-label {
+    font-weight: 600;
+    font-size: 12px;
+    color: #718096;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-right: 4px;
+    min-width: 60px;
+}
+
+.jgrants-category-link,
+.jgrants-prefecture-link,
+.jgrants-tag-link {
+    display: inline-block;
+    padding: 3px 8px;
+    background: #edf2f7;
+    color: #4a5568;
+    text-decoration: none;
+    border-radius: 12px;
+    font-size: 11px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    border: 1px solid transparent;
+}
+
+.jgrants-category-link:hover,
+.jgrants-prefecture-link:hover,
+.jgrants-tag-link:hover {
+    background: var(--jgrants-accent-color, #007cba);
+    color: white;
+    transform: translateY(-1px);
+}
+
+.jgrants-category-link {
+    background: #e6fffa;
+    color: #234e52;
+}
+
+.jgrants-prefecture-link {
+    background: #fef5e7;
+    color: #744210;
+}
+
+.jgrants-tag-link {
+    background: #f0fff4;
+    color: #22543d;
+}
+
+/* フッター */
+.jgrants-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 16px;
+    border-top: 1px solid #e2e8f0;
+}
+
+.jgrants-actions {
+    display: flex;
+    gap: 12px;
+}
+
+.jgrants-read-more {
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 20px;
+    background: var(--jgrants-accent-color, #007cba);
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 4px rgba(0, 123, 186, 0.2);
+}
+
+.jgrants-read-more:hover {
+    background: #005a87;
+    color: white;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0, 123, 186, 0.3);
+}
+
+.jgrants-external-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 10px 16px;
+    border: 2px solid var(--jgrants-accent-color, #007cba);
+    color: var(--jgrants-accent-color, #007cba);
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    background: white;
+}
+
+.jgrants-external-link:hover {
+    background: var(--jgrants-accent-color, #007cba);
+    color: white;
+    transform: translateY(-1px);
+}
+
+.external-icon {
+    font-size: 12px;
+    transition: transform 0.2s ease;
+}
+
+.jgrants-external-link:hover .external-icon {
+    transform: translate(2px, -2px);
+}
+
+.jgrants-updated {
+    font-size: 12px;
+    color: #a0aec0;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.updated-label {
+    font-weight: 500;
+}
+
+/* ページネーション */
+.jgrants-pagination {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.jgrants-pagination a,
+.jgrants-pagination span {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 40px;
+    height: 40px;
+    margin: 0 2px;
+    border: 1px solid #e2e8f0;
+    color: #4a5568;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.jgrants-pagination a:hover {
+    background: #f7fafc;
+    border-color: var(--jgrants-accent-color, #007cba);
+    color: var(--jgrants-accent-color, #007cba);
+}
+
+.jgrants-pagination .current {
+    background: var(--jgrants-accent-color, #007cba);
+    color: white;
+    border-color: var(--jgrants-accent-color, #007cba);
+}
+
+.jgrants-pagination .prev,
+.jgrants-pagination .next {
+    padding: 0 16px;
+}
+
+/* 結果なし */
+.jgrants-no-results {
+    text-align: center;
+    padding: 60px 20px;
+    color: #718096;
+    background: #f7fafc;
+    border-radius: 8px;
+    border: 2px dashed #e2e8f0;
+}
+
+.jgrants-no-results p {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+/* ローディング状態 */
+.jgrants-loading {
+    position: relative;
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.jgrants-loading::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    margin: -10px 0 0 -10px;
+    border: 2px solid #e2e8f0;
+    border-top-color: var(--jgrants-accent-color, #007cba);
+    border-radius: 50%;
+    animation: jgrants-spin 1s linear infinite;
+}
+
+@keyframes jgrants-spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* グリッドレイアウト */
+.jgrants-list.grid-2 .jgrants-items {
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+}
+
+.jgrants-list.grid-3 .jgrants-items {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+/* カード形式 */
+.jgrants-list.card-style .jgrants-item {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border: none;
+}
+
+.jgrants-list.card-style .jgrants-item:hover {
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* コンパクト表示 */
+.jgrants-list.compact .jgrants-item {
+    padding: 16px;
+}
+
+.jgrants-list.compact .jgrants-title {
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+
+.jgrants-list.compact .jgrants-excerpt {
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+/* ダークモード対応 */
+@media (prefers-color-scheme: dark) {
+    .jgrants-item {
+        background: #2d3748;
+        border-color: #4a5568;
+        color: #e2e8f0;
+    }
+    
+    .jgrants-title {
+        color: #f7fafc;
+    }
+    
+    .jgrants-excerpt {
+        color: #cbd5e0;
+    }
+    
+    .jgrants-dates {
+        background: #4a5568;
+        color: #e2e8f0;
+    }
+    
+    .jgrants-footer {
+        border-color: #4a5568;
+    }
+    
+    .jgrants-updated {
+        color: #a0aec0;
+    }
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+    .jgrants-item {
+        padding: 16px;
+        margin-bottom: 16px;
+    }
+    
+    .jgrants-title {
+        font-size: 18px;
+    }
+    
+    .jgrants-meta {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+    }
+    
+    .jgrants-footer {
+        flex-direction: column;
+        gap: 12px;
+        align-items: flex-start;
+    }
+    
+    .jgrants-actions {
+        width: 100%;
+        justify-content: space-between;
+    }
+    
+    .jgrants-taxonomies > div {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+    }
+    
+    .taxonomy-label {
+        margin-bottom: 4px;
+    }
+    
+    .jgrants-list.grid-2 .jgrants-items,
+    .jgrants-list.grid-3 .jgrants-items {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .jgrants-item {
+        padding: 12px;
+    }
+    
+    .jgrants-title {
+        font-size: 16px;
+    }
+    
+    .jgrants-excerpt {
+        font-size: 14px;
+    }
+    
+    .jgrants-read-more,
+    .jgrants-external-link {
+        padding: 8px 12px;
+        font-size: 13px;
+    }
+    
+    .jgrants-pagination a,
+    .jgrants-pagination span {
+        min-width: 36px;
+        height: 36px;
+        font-size: 14px;
+    }
+}
+
