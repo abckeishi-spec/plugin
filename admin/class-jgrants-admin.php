@@ -86,6 +86,15 @@ class JGrants_Admin {
             'jgrants-design-settings',
             array($this, 'design_settings_page')
         );
+        
+        add_submenu_page(
+            'jgrants-integration',
+            'システムステータス',
+            'システムステータス',
+            'manage_options',
+            'jgrants-status',
+            array($this, 'status_page')
+        );
     }
     
     /**
@@ -316,6 +325,13 @@ class JGrants_Admin {
         } else {
             wp_send_json_error($result['message']);
         }
+    }
+    
+    /**
+     * システムステータスページ
+     */
+    public function status_page() {
+        include JGRANTS_PLUGIN_PATH . 'admin/views/status-page.php';
     }
     
     /**
